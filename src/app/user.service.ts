@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {User} from './userModel'
 
-const user: User = {name: "Lee", budget: 9}
+const user: User = {name: "Lee", budget: 10}
 
 @Injectable({
   providedIn: 'root'

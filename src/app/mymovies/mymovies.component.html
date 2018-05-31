@@ -1,11 +1,14 @@
 <h2>My Collection</h2> 
 <div *ngIf="myMovies.length == 0" class="phrase">Select movies from below to add to collection!</div>
+<input [(ngModel)]="filterTerm" *ngIf="myMovies.length > 0"placeholder="Filter movies by name..."/>
+<br>
+<br>
 <button *ngIf="myMovies.length > 0"mat-button color="primary" (click)="activateDelete()">Delete a Purchase <i class="fa fa-trash" aria-hidden="true"></i>
 </button>
 <div class="container">
     <div class="list-container">
     <div class="cards-container" layout-wrap layout="row">
-      <mat-card flex="30" *ngFor="let movie of myMovies; let idx = index" class="movie-card">
+      <mat-card flex="30" *ngFor="let movie of myMovies| filter:filterTerm; let idx = index" class="movie-card">
         <app-movie [movie]="movie"></app-movie>
         <button *ngIf="deleteOn == true" mat-button color="primary" (click)="removePurchase(movie, idx)">Remove Purchase <i class="fa fa-trash" aria-hidden="true"></i>
         </button>
