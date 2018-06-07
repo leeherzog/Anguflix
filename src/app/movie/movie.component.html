@@ -1,8 +1,9 @@
 
         <mat-card-content class="card">
-          <img src={{movie.img}}>
+          <img src={{movie.imgUrl}}>
           <p><strong>{{movie.title}}, </strong>{{movie.year}}</p>
-          <p> {{movie.descrShort}} </p>
+          <p> {{movie.shortDescription}} </p>
+          <button mat-button [routerLink]="['movieExtras', movie._id]"> Full Movie Description </button>
         </mat-card-content>
-   
+        
 

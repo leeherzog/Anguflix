@@ -1,0 +1,11 @@
+<div class="full"> 
+
+<img src={{movie.imgUrl}}>
+<h3><strong>{{movie.title}}, </strong>{{movie.year}}</h3>
+<p>Director: {{movie.director}}</p>
+<button mat-button color="primary" (click)="purchase(movie, movie._id)">Purchase <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+<p> {{movie.fullDescription}} </p>
+<p *ngFor="let review of movie.reviews">Review author: {{review.name}}, rating: {{review.rating}} <br>
+{{review.text}}</p>
+</div>

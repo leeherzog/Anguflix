@@ -12,14 +12,14 @@ export class MymoviesComponent implements OnInit {
   myMovies = new Array<Movie>();
   deleteOn: boolean = false;
   constructor(private moviesService: MoviesService, private userService: UserService) { 
-  this.myMovies = moviesService.getMyMovies();
+  this.myMovies = userService.getMyMovies();
 }
 
   ngOnInit() {
   }
 
   removePurchase(movie, idx){
-    this.moviesService.deleteMyMovie(movie, idx);
+    this.userService.deleteMyMovie(movie, idx);
     this.moviesService.addMovie(movie);
     this.userService.deletePurchase(movie.price);
   }

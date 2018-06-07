@@ -20,6 +20,12 @@ import { AllmoviesComponent } from './allmovies/allmovies.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { UserInfoComponent } from './user-info/user-info.component';
 
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+
+import {AppRoutingModule} from './/app-routing.module';
+import { MovieExtraComponent } from './movie-extra/movie-extra.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +33,8 @@ import { UserInfoComponent } from './user-info/user-info.component';
     MymoviesComponent,
     AllmoviesComponent,
     UserInfoComponent,
-    FilterPipe
+    FilterPipe,
+    MovieExtraComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +45,9 @@ import { UserInfoComponent } from './user-info/user-info.component';
     MatButtonModule,
     BrowserAnimationsModule,
     AngularFontAwesomeModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [MoviesService],
   bootstrap: [AppComponent]
